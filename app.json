@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "01",
-    "slug": "01",
+    "name": "Recurrly",
+    "slug": "Recurrly",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "01",
+    "scheme": "recurrly",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
