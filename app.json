@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "Recurrly",
-    "slug": "Recurrly",
+    "name": "PayAlert",
+    "slug": "payalert",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "recurrly",
+    "scheme": "payalert",
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true
