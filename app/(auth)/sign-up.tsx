@@ -110,7 +110,7 @@ export default function SignUpScreen() {
               </Text>
             </View>
 
-            <View className="mt-8 rounded-[32px] border border-border bg-card p-5">
+            <View className="mt-8 rounded-4xl border border-border bg-card p-5">
               <View className="gap-5">
                 <View>
                   <Text className="mb-2 font-sans-semibold text-primary">
@@ -268,7 +268,7 @@ export default function SignUpScreen() {
               </Text>
             </View>
 
-            <View className="mt-8 rounded-[32px] border border-border bg-card p-5">
+            <View className="mt-8 rounded-4xl border border-border bg-card p-5">
               <Text className="mb-2 font-sans-semibold text-primary">
                 Verification Code
               </Text>
