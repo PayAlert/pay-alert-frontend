@@ -1,12 +1,14 @@
 import { useAuth, useSignUp } from "@clerk/expo";
 import { Link, useRouter, type Href } from "expo-router";
 import React from "react";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import {
   ScrollView,
   View,
   Text,
   TextInput,
   Pressable,
+  TouchableOpacity,
 } from "react-native";
 
 import { SafeAreaView as RNSafeAreaView } from "react-native-safe-area-context";
@@ -24,6 +26,8 @@ export default function SignUpScreen() {
   const [emailAddress, setEmailAddress] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [code, setCode] = React.useState("");
+  const [showPassword, setShowPassword] = React.useState(false);
+  
 
   const handleSubmit = async () => {
     const { error } = await signUp.password({
@@ -170,23 +174,41 @@ export default function SignUpScreen() {
                   )}
                 </View>
 
-                <View>
+                <View className="mt-5">
                   <Text className="mb-2 font-sans-semibold text-primary">
                     Password
                   </Text>
 
-                  <TextInput
-                    value={password}
-                    onChangeText={setPassword}
-                    secureTextEntry
-                    placeholder="Create a password"
-                    placeholderTextColor="rgba(0,0,0,0.5)"
-                    className="rounded-2xl border border-border bg-background text-primary"
-                    style={{
-                      paddingHorizontal: 16,
-                      paddingVertical: 16,
-                    }}
-                  />
+                  <View className="relative">
+                    <TextInput
+                      value={password}
+                      onChangeText={setPassword}
+                      secureTextEntry={!showPassword}
+                      placeholder="Enter your password"
+                      placeholderTextColor="rgba(0,0,0,0.5)"
+                      className="rounded-2xl border border-border bg-background text-primary"
+                      style={{
+                        paddingHorizontal: 16,
+                        paddingVertical: 16,
+                        paddingRight: 50,
+                      }}
+                    />
+
+                    <TouchableOpacity
+                      onPress={() => setShowPassword(!showPassword)}
+                      style={{
+                        position: "absolute",
+                        right: 15,
+                        top: 16,
+                      }}
+                    >
+                      <Ionicons
+                        name={showPassword ? "eye-off" : "eye"}
+                        size={22}
+                        color="gray"
+                      />
+                    </TouchableOpacity>
+                  </View>
 
                   {errors.fields.password && (
                     <Text className="mt-2 text-sm text-destructive">
